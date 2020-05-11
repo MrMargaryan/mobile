@@ -1,4 +1,7 @@
 {
   "name": "DiceGame",
-  "displayName": "DiceGame"
+  "displayName": "DiceGame",
+  "expo": {
+    "sdkVersion": "18.0.0"
+  }
 }
