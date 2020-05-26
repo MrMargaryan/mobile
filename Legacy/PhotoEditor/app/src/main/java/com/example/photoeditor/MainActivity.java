@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 file = createPhotoFile();
             } catch (IOException error) {
-                Toast.makeText(this, "Ошибка при создании файла", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Ошибка при создании  файла", Toast.LENGTH_LONG).show();
             }
             if (file != null){
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
