@@ -1,1 +1,1 @@
-Репозиторий первой лабы – https://github.com/MrMargaryan/diceGame
+# Репозиторий первой лабы – https://github.com/MrMargaryan/diceGame
