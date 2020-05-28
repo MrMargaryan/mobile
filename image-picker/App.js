@@ -9,25 +9,25 @@ const App = () => {
   const [uri, setUri] = useState(null)
 
   useEffect(() => {
-      getPermissionAsync()
-    }, [])
+    getCameraPermissionAsync()
+  }, [])
 
-  const getPermissionAsync = async () => {
-    const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL)
+  const getCameraPermissionAsync = async () => {
+    const { status } = await Permissions.askAsync(Permissions.CAMERA)
     status !== 'granted' && alert('Извините, но нам нужно ваше разрешение')
   }
 
   const pickImage = async () => {
     try {
-      let result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.All,
+      let result = await ImagePicker.launchCameraAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
         aspect: [4, 3],
-        quality: 1,
+        quality: 1
       })
 
       !result.cancelled && setUri(result.uri)
-    } catch(error) {
+    } catch (error) {
       console.log(error)
     }
   }
@@ -40,9 +40,9 @@ const App = () => {
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'darkslateblue' }}>
-      <Button title="Выберите фотку" onPress={pickImage} />
+      <Button title="Сделать фото" onPress={pickImage} />
       {uri && <Image source={{ uri }} style={{ width: 200, height: 200, marginTop: 20, marginBottom: 20 }} />}
-      {uri && <Button title="Сохранить фотку" onPress={saveImage} />}
+      {uri && <Button title="Сохранить фото" onPress={saveImage} />}
     </View>
   )
 }
