@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import Swipeout from 'react-native-swipeout'
 import Emoji from 'react-native-emoji'
 import Form from './Form'

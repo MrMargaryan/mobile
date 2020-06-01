@@ -35,7 +35,7 @@ const App = () => {
   useEffect(() => {
     loadContacts()
   }, [])
-  // + 7 - 901 - 5559 - 171
+
   useEffect(() => {
     updateContacts()
   }, [contacts])
@@ -43,7 +43,7 @@ const App = () => {
   const loadContacts = async () => {
     try {
       const data = await AsyncStorage.getItem('contacts')
-      setContacts(JSON.parse(data) || null)
+      data && setContacts(JSON.parse(data))
       setIsLoaded(true)
     } catch (error) {
       console.error(error)
